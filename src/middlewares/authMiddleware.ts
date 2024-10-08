@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { User } from "../models/user";
+import { User } from "../models/users";
 import { ERROR_MESSAGES } from "../errors/comman_message"; // Get error message json
 
 const SECRET_KEY = process.env.JWT_SECRET_KEY || "my_fallback_secret_key";

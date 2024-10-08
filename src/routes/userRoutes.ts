@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 import { authenticateToken } from "../middlewares/authMiddleware";
-import { UserModel } from "../models/user";
+import { UserModel } from "../models/users";
 import { ERROR_MESSAGES } from "../errors/comman_message"; // Get error message json
 
 const router: Router = express.Router();
@@ -42,9 +42,13 @@ const signupHandler = async (req: Request, res: Response, next: NextFunction): P
 
         await newUser.save();
         res.status(201).json({ message: "User created successfully" });
-    } catch (error) {
-        console.error("Error in signup:", error);
-        res.status(500).json({ message: ERROR_MESSAGES.ERROR_CREATING_USER });
+    } catch (error: any) {
+        if (error.code === 11000) {
+            console.error("Error in signup:", error.message);
+            res.status(500).json({ message: ERROR_MESSAGES.ERROR_CREATING_USER });
+        } else {
+            res.status(500).send({ message: ERROR_MESSAGES.SERVER_ERROR });
+        }
     }
 };
 
