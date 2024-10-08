@@ -33,7 +33,6 @@ This is a User Management API built with Node.js, Express, and MongoDB. It provi
 1. Clone the repository:
    ```bash
    git clone https://github.com/AjayDumaraliya19/user_routes.git
-   cd USER_ROUTES
 
 2. Install the dependencies:
    ```bash
