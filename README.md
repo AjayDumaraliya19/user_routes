@@ -32,7 +32,7 @@ This is a User Management API built with Node.js, Express, and MongoDB. It provi
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
+   git clone <[repository_url](https://github.com/AjayDumaraliya19/user_routes.git)>
    cd USER_ROUTES
 
 2. Install the dependencies:
@@ -53,6 +53,7 @@ Replace `<username>` and `<password>` with your MongoDB credentials.
 The server will run on `http://localhost:3000`.
 
 ## Folder Structure
+```json
 ├── src
 │ ├── errors
 │ │ └── comman_message.ts
@@ -69,6 +70,7 @@ The server will run on `http://localhost:3000`.
 ├── package.json
 ├── README.md
 └── tsconfig.json
+```
 
 ## API Endpoints
 ### User Endpoints
