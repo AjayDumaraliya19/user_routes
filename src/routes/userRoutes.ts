@@ -110,7 +110,7 @@ const profile = async (req: Request, res: Response, next: NextFunction): Promise
 
 router.post("/signup", signupHandler);
 router.post("/login", loginHandler);
-router.post("/logout", authenticateToken, logoutHandler);
+router.get("/logout", authenticateToken, logoutHandler);
 router.get("/me", authenticateToken, profile);
 
 export default router;
